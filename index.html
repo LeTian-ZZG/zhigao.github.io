@@ -3,38 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>电子校园卡</title>
+    <title>我的照片</title>
+    
     <style>
-        /* 这是一个简单的样式，让图片居中并适应屏幕大小 */
+        /* 1. 移除 body 的所有边距 (消除白边) */
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; /* 最小高度为整个屏幕 */
-            margin: 0;  /* <-- 这行代码就是用来移除白色边框的 */
+            margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* 浅灰色背景 */
+            overflow: hidden; /* 隐藏滚动条 */
+            /* 背景色设为黑色，防止图片加载时闪白屏 */
+            background-color: #000; 
         }
         
+        /* 2. 让 img 标签铺满整个屏幕 (cover) */
         img {
-            max-width: 100%;   /* 图片最大宽度为屏幕的90% */
-            height: auto;       /* 高度自动缩放 */
-            border-radius: 10px; /* 圆角 */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 简单阴影 */
+            /* 确保图片是块级元素，消除可能的额外空间 */
+            display: block; 
+            
+            /* 设置图片宽度为 100% 屏幕宽度 */
+            width: 100vw;
+            
+            /* 设置图片高度为 100% 屏幕高度 */
+            height: 100vh;
+            
+            /* * 核心属性: 
+             * 自动缩放并裁剪来“覆盖”整个屏幕
+             * 这就是你想要的“填充”效果
+             */
+            object-fit: cover;
         }
     </style>
-</head>
+    </head>
 <body>
 
     <img src="zhigao.jpg" alt="这是我的照片">
 
 </body>
-
 </html>
-
-
-
-
-
-
-
